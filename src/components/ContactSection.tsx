@@ -1,9 +1,6 @@
-import { Mail, MapPin, Phone, User, Send } from "lucide-react";
+import { Mail, MapPin, Phone, User } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Label } from "@/components/ui/label";
-import { Textarea } from "@/components/ui/textarea";
 
 const ContactSection = () => {
   const contactInfo = [
@@ -29,22 +26,22 @@ const ContactSection = () => {
 
   const teamMembers = [
     {
-      name: "Dr. María Salinas",
+      name: "Ing. María Salinas",
       role: "Coordinadora General del Proyecto",
       email: "m.salinas@proyecto.ec",
-      specialization: "Desarrollo Sostenible Marino-Costero"
+      specialization: "Capacitación en Herramientas Digitales"
     },
     {
-      name: "Ing. Carlos Mendoza",
-      role: "Especialista en Transformación Digital",
+      name: "Lic. Carlos Mendoza",
+      role: "Instructor Principal de Excel",
       email: "c.mendoza@proyecto.ec",
-      specialization: "Tecnologías de la Información"
+      specialization: "Microsoft Excel y Análisis de Datos"
     },
     {
-      name: "Biol. Ana Rodríguez",
-      role: "Especialista en Conservación Marina",
+      name: "Lic. Ana Rodríguez",
+      role: "Facilitadora Comunitaria",
       email: "a.rodriguez@proyecto.ec",
-      specialization: "Biodiversidad y Ecosistemas Costeros"
+      specialization: "Capacitación para Actividades Pesqueras"
     }
   ];
 
@@ -61,14 +58,14 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
+        <div className="grid lg:grid-cols-2 gap-12 max-w-4xl mx-auto">
           {/* Información de contacto */}
           <div className="animate-fade-in-up">
             <Card className="shadow-wave bg-card/90 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary">Información de Contacto</CardTitle>
                 <CardDescription>
-                  Comunícate con nosotros para más información sobre el proyecto
+                  Comunícate con nosotros para más información sobre las capacitaciones de Excel
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-6">
@@ -94,13 +91,15 @@ const ContactSection = () => {
                 })}
               </CardContent>
             </Card>
+          </div>
 
-            {/* Equipo responsable */}
-            <Card className="mt-8 shadow-wave bg-card/90 backdrop-blur-sm">
+          {/* Equipo responsable */}
+          <div className="animate-fade-in-up" style={{ animationDelay: '0.1s' }}>
+            <Card className="shadow-wave bg-card/90 backdrop-blur-sm">
               <CardHeader>
                 <CardTitle className="text-2xl text-primary">Equipo Responsable</CardTitle>
                 <CardDescription>
-                  Profesionales comprometidos con el desarrollo de Manglaralto
+                  Instructores especializados en Excel para la comunidad pesquera
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -122,76 +121,6 @@ const ContactSection = () => {
                     </div>
                   </div>
                 ))}
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Formulario de contacto */}
-          <div className="animate-fade-in-up" style={{ animationDelay: '0.2s' }}>
-            <Card className="shadow-wave bg-card/90 backdrop-blur-sm">
-              <CardHeader>
-                <CardTitle className="text-2xl text-primary">Envíanos un Mensaje</CardTitle>
-                <CardDescription>
-                  ¿Tienes preguntas o sugerencias? Nos encantaría escucharte
-                </CardDescription>
-              </CardHeader>
-              <CardContent className="space-y-4">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="nombre">Nombre</Label>
-                    <Input 
-                      id="nombre" 
-                      placeholder="Tu nombre completo"
-                      className="bg-background/50"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="organizacion">Organización</Label>
-                    <Input 
-                      id="organizacion" 
-                      placeholder="Tu organización (opcional)"
-                      className="bg-background/50"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email">Correo Electrónico</Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="tu@email.com"
-                    className="bg-background/50"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="asunto">Asunto</Label>
-                  <Input 
-                    id="asunto" 
-                    placeholder="Tema de tu consulta"
-                    className="bg-background/50"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="mensaje">Mensaje</Label>
-                  <Textarea 
-                    id="mensaje"
-                    placeholder="Escribe tu mensaje aquí..."
-                    rows={5}
-                    className="bg-background/50"
-                  />
-                </div>
-                
-                <Button className="w-full gradient-ocean text-white shadow-wave hover-wave">
-                  <Send className="w-4 h-4 mr-2" />
-                  Enviar Mensaje
-                </Button>
-                
-                <p className="text-sm text-muted-foreground text-center">
-                  Te responderemos en un plazo máximo de 48 horas
-                </p>
               </CardContent>
             </Card>
           </div>

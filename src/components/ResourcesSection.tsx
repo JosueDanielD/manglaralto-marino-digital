@@ -5,39 +5,29 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 const ResourcesSection = () => {
   const resourceCategories = [
     {
-      title: "Guías de Capacitación",
-      description: "Material didáctico para talleres comunitarios",
+      title: "Guías de Capacitación Excel",
+      description: "Material didáctico para aprender Excel",
       icon: BookOpen,
       color: "text-primary",
       bgColor: "bg-primary/10",
       documents: [
-        { name: "Guía de Pesca Sostenible", type: "PDF", size: "2.3 MB" },
-        { name: "Manual de Turismo Comunitario", type: "PDF", size: "1.8 MB" },
-        { name: "Conservación de Manglares", type: "PDF", size: "3.1 MB" },
-      ]
-    },
-    {
-      title: "Informes de Investigación",
-      description: "Estudios y análisis del proyecto",
-      icon: FileText,
-      color: "text-accent-dark",
-      bgColor: "bg-accent/10",
-      documents: [
-        { name: "Diagnóstico Socio-ambiental", type: "PDF", size: "4.2 MB" },
-        { name: "Análisis de Biodiversidad Marina", type: "PDF", size: "5.7 MB" },
-        { name: "Evaluación Participativa", type: "PDF", size: "2.9 MB" },
+        { name: "Guía Básica de Excel", type: "PDF", size: "2.1 MB" },
+        { name: "Fórmulas y Funciones Esenciales", type: "PDF", size: "1.8 MB" },
+        { name: "Creación de Gráficos en Excel", type: "PDF", size: "2.5 MB" },
+        { name: "Tablas Dinámicas para Principiantes", type: "PDF", size: "3.2 MB" },
       ]
     },
     {
       title: "Materiales Comunitarios",
-      description: "Recursos para organizaciones locales",
+      description: "Recursos específicos para la comunidad pesquera",
       icon: Users,
       color: "text-secondary-vibrant",
       bgColor: "bg-secondary/20",
       documents: [
-        { name: "Reglamento de Pesca Artesanal", type: "PDF", size: "1.2 MB" },
-        { name: "Actas de Asambleas Comunitarias", type: "PDF", size: "0.9 MB" },
-        { name: "Plan de Desarrollo Local", type: "PDF", size: "3.8 MB" },
+        { name: "Registro de Capturas en Excel", type: "PDF", size: "1.4 MB" },
+        { name: "Control de Gastos Pesqueros", type: "PDF", size: "1.1 MB" },
+        { name: "Inventario de Equipos de Pesca", type: "PDF", size: "0.9 MB" },
+        { name: "Planilla de Ventas Diarias", type: "PDF", size: "1.2 MB" },
       ]
     }
   ];
@@ -50,32 +40,11 @@ const ResourcesSection = () => {
             Recursos y Documentos
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Accede a materiales de capacitación, informes de investigación y recursos comunitarios 
-            para el desarrollo sostenible de Manglaralto
+            Accede a guías de Excel y materiales específicos para la comunidad pesquera de Manglaralto
           </p>
         </div>
 
-        {/* Botón de carga de documentos */}
-        <div className="mb-12 text-center">
-          <Card className="max-w-md mx-auto shadow-coastal hover-coastal">
-            <CardHeader className="pb-3">
-              <CardTitle className="flex items-center justify-center space-x-2 text-primary">
-                <Upload className="w-5 h-5" />
-                <span>Contribuir</span>
-              </CardTitle>
-            </CardHeader>
-            <CardContent>
-              <p className="text-sm text-muted-foreground mb-4">
-                ¿Tienes documentos para compartir con la comunidad?
-              </p>
-              <Button className="w-full gradient-coastal text-white hover:opacity-90 shadow-wave">
-                Subir Documento
-              </Button>
-            </CardContent>
-          </Card>
-        </div>
-
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
           {resourceCategories.map((category, index) => {
             const IconComponent = category.icon;
             return (

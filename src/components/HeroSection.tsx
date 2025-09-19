@@ -41,8 +41,8 @@ const HeroSection = () => {
             </div>
             <div className="flex flex-col items-center p-6 bg-white/20 rounded-lg backdrop-blur-sm hover-wave">
               <BookOpen className="w-10 h-10 mb-3 text-secondary-vibrant" />
-              <h3 className="font-semibold text-lg mb-2">Capacitación</h3>
-              <p className="text-sm text-white/90">Recursos y formación para el desarrollo local</p>
+              <h3 className="font-semibold text-lg mb-2">Capacitación Excel</h3>
+              <p className="text-sm text-white/90">Aprende Excel para mejorar tu actividad pesquera</p>
             </div>
           </div>
 

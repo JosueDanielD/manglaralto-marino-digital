@@ -13,49 +13,49 @@ const GallerySection = () => {
       id: 1,
       src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
       alt: "Taller de pesca sostenible en Manglaralto",
-      title: "Taller de Pesca Sostenible",
+      title: "Taller Básico de Excel",
       date: "15 Marzo 2024",
       participants: 25
     },
     {
       id: 2,
       src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
-      alt: "Capacitación en conservación de manglares",
-      title: "Conservación de Manglares",
+      alt: "Capacitación en fórmulas de Excel",
+      title: "Fórmulas y Funciones de Excel",
       date: "20 Marzo 2024",
       participants: 18
     },
     {
       id: 3,
       src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-      alt: "Reunión comunitaria sobre turismo sostenible",
-      title: "Turismo Sostenible Comunitario",
+      alt: "Taller de gráficos en Excel",
+      title: "Creación de Gráficos",
       date: "28 Marzo 2024",
-      participants: 32
+      participants: 22
     },
     {
       id: 4,
       src: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300&fit=crop",
-      alt: "Jornada de limpieza costera",
-      title: "Limpieza Costera Comunitaria",
+      alt: "Capacitación en tablas dinámicas",
+      title: "Tablas Dinámicas en Excel",
       date: "5 Abril 2024",
-      participants: 45
+      participants: 28
     },
     {
       id: 5,
       src: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=400&h=300&fit=crop",
-      alt: "Taller de tecnología para pescadores",
-      title: "Digitalización Pesquera",
+      alt: "Taller de registro de capturas",
+      title: "Registro Digital de Capturas",
       date: "12 Abril 2024",
-      participants: 22
+      participants: 30
     },
     {
       id: 6,
       src: "https://images.unsplash.com/photo-1570497492707-9f54797f24d3?w=400&h=300&fit=crop",
-      alt: "Seminario sobre biodiversidad marina",
-      title: "Biodiversidad Marina Local",
+      alt: "Capacitación en control de gastos",
+      title: "Control de Gastos Pesqueros",
       date: "18 Abril 2024",
-      participants: 35
+      participants: 24
     },
   ];
 
@@ -66,39 +66,10 @@ const GallerySection = () => {
           <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
             Galería Fotográfica
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto mb-8">
-            Momentos destacados de nuestras capacitaciones, talleres y actividades comunitarias 
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Momentos destacados de nuestras capacitaciones de Excel y talleres comunitarios 
             en Manglaralto
           </p>
-          
-          {/* Botón de subida de fotos */}
-          <Dialog>
-            <DialogTrigger asChild>
-              <Button className="gradient-ocean text-white shadow-wave hover-wave">
-                <Camera className="w-4 h-4 mr-2" />
-                Subir Fotografías
-              </Button>
-            </DialogTrigger>
-            <DialogContent>
-              <DialogHeader>
-                <DialogTitle>Compartir Fotografías de la Comunidad</DialogTitle>
-              </DialogHeader>
-              <div className="p-6">
-                <div className="border-2 border-dashed border-muted rounded-lg p-8 text-center">
-                  <Upload className="w-12 h-12 text-muted-foreground mx-auto mb-4" />
-                  <p className="text-muted-foreground mb-2">
-                    Arrastra y suelta tus fotos aquí, o haz clic para seleccionar
-                  </p>
-                  <p className="text-sm text-muted-foreground">
-                    Formatos soportados: JPG, PNG, WEBP (máx. 10MB)
-                  </p>
-                  <Button className="mt-4" variant="outline">
-                    Seleccionar Archivos
-                  </Button>
-                </div>
-              </div>
-            </DialogContent>
-          </Dialog>
         </div>
 
         {/* Cuadrícula de imágenes */}
