@@ -2,41 +2,69 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
-All colors MUST be HSL.
+/* Sistema de diseño marino-costero para Proyecto Manglaralto
+Colores inspirados en el entorno marino del Pacífico ecuatoriano
 */
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    /* Fondos - Inspirados en arena y espuma marina */
+    --background: 200 20% 98%;
+    --foreground: 210 25% 15%;
 
+    /* Cards - Tonos de arena clara */
     --card: 0 0% 100%;
-    --card-foreground: 222.2 84% 4.9%;
+    --card-foreground: 210 25% 15%;
 
+    /* Popovers */
     --popover: 0 0% 100%;
-    --popover-foreground: 222.2 84% 4.9%;
+    --popover-foreground: 210 25% 15%;
 
-    --primary: 222.2 47.4% 11.2%;
-    --primary-foreground: 210 40% 98%;
+    /* Primario - Azul océano profundo */
+    --primary: 210 85% 25%;
+    --primary-foreground: 0 0% 100%;
+    --primary-light: 210 70% 45%;
+    --primary-dark: 210 90% 15%;
 
-    --secondary: 210 40% 96.1%;
-    --secondary-foreground: 222.2 47.4% 11.2%;
+    /* Secundario - Turquesa costero */
+    --secondary: 185 60% 85%;
+    --secondary-foreground: 210 25% 15%;
+    --secondary-vibrant: 185 85% 45%;
 
-    --muted: 210 40% 96.1%;
-    --muted-foreground: 215.4 16.3% 46.9%;
+    /* Muted - Tonos suaves de mar */
+    --muted: 200 25% 92%;
+    --muted-foreground: 210 15% 55%;
 
-    --accent: 210 40% 96.1%;
-    --accent-foreground: 222.2 47.4% 11.2%;
+    /* Accent - Verde marino */
+    --accent: 165 45% 65%;
+    --accent-foreground: 210 25% 15%;
+    --accent-dark: 165 60% 35%;
 
+    /* Estados */
     --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 210 40% 98%;
+    --destructive-foreground: 0 0% 100%;
 
-    --border: 214.3 31.8% 91.4%;
-    --input: 214.3 31.8% 91.4%;
-    --ring: 222.2 84% 4.9%;
+    /* Bordes y elementos */
+    --border: 200 20% 88%;
+    --input: 200 20% 95%;
+    --ring: 210 85% 25%;
 
-    --radius: 0.5rem;
+    --radius: 0.75rem;
+
+    /* Gradientes marino-costeros */
+    --gradient-ocean: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--secondary-vibrant)) 100%);
+    --gradient-horizon: linear-gradient(180deg, hsl(var(--secondary)) 0%, hsl(var(--background)) 100%);
+    --gradient-wave: linear-gradient(90deg, hsl(var(--accent)) 0%, hsl(var(--secondary-vibrant)) 50%, hsl(var(--primary-light)) 100%);
+    --gradient-coastal: linear-gradient(45deg, hsl(var(--accent-dark)) 0%, hsl(var(--accent)) 100%);
+
+    /* Sombras océanicas */
+    --shadow-wave: 0 4px 20px -2px hsl(var(--primary) / 0.15);
+    --shadow-deep: 0 10px 30px -5px hsl(var(--primary) / 0.25);
+    --shadow-coastal: 0 2px 15px -3px hsl(var(--accent) / 0.20);
+
+    /* Animaciones fluidas */
+    --transition-wave: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    --transition-smooth: all 0.3s ease-out;
 
     --sidebar-background: 0 0% 98%;
 
@@ -100,6 +128,98 @@ All colors MUST be HSL.
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans;
+  }
+}
+
+@layer components {
+  /* Utilidades marinas personalizadas */
+  .gradient-ocean {
+    background: var(--gradient-ocean);
+  }
+  
+  .gradient-horizon {
+    background: var(--gradient-horizon);
+  }
+  
+  .gradient-wave {
+    background: var(--gradient-wave);
+  }
+  
+  .gradient-coastal {
+    background: var(--gradient-coastal);
+  }
+  
+  .shadow-wave {
+    box-shadow: var(--shadow-wave);
+  }
+  
+  .shadow-deep {
+    box-shadow: var(--shadow-deep);
+  }
+  
+  .shadow-coastal {
+    box-shadow: var(--shadow-coastal);
+  }
+  
+  .transition-wave {
+    transition: var(--transition-wave);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+
+  /* Efectos de hover marinos */
+  .hover-wave {
+    @apply transition-wave hover:shadow-wave hover:scale-105;
+  }
+  
+  .hover-coastal {
+    @apply transition-smooth hover:shadow-coastal;
+  }
+
+  /* Animación de olas */
+  .wave-animation {
+    background: linear-gradient(-45deg, hsl(var(--primary)), hsl(var(--secondary-vibrant)), hsl(var(--accent)), hsl(var(--primary-light)));
+    background-size: 400% 400%;
+    animation: wave-flow 8s ease-in-out infinite;
+  }
+}
+
+@layer utilities {
+  /* Animaciones keyframes */
+  @keyframes wave-flow {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+  }
+
+  @keyframes gentle-float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  @keyframes fade-in-up {
+    0% {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-wave-flow {
+    animation: wave-flow 8s ease-in-out infinite;
+  }
+  
+  .animate-gentle-float {
+    animation: gentle-float 3s ease-in-out infinite;
+  }
+  
+  .animate-fade-in-up {
+    animation: fade-in-up 0.6s ease-out;
   }
 }
