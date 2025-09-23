@@ -31,7 +31,7 @@ const ContactSection = () => {
     },
     {
       name: "Ing. Sandra Coello",
-      role: "Instructor Principal de Excel",
+      role: "Coordinadora General del Proyecto",
       //email: "c.mendoza@proyecto.ec",
       //specialization: "Microsoft Excel y Análisis de Datos"
     },
@@ -92,7 +92,7 @@ const ContactSection = () => {
               <CardHeader>
                 <CardTitle className="text-2xl text-primary">Equipo Responsable</CardTitle>
                 <CardDescription>
-                  Instructores especializados en Excel para la comunidad pesquera
+                  {/*Instructores especializados en Excel para la comunidad pesquera*/}
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
