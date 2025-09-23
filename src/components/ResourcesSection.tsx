@@ -3,31 +3,45 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 const ResourcesSection = () => {
+  // Función para manejar la descarga de archivos
+  const handleDownload = (fileName: string, filePath: string) => {
+    const link = document.createElement('a');
+    link.href = filePath;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
   const resourceCategories = [
     {
-      title: "Guías de Capacitación Excel",
-      description: "Material didáctico para aprender Excel",
+      title: "Guías usadas en los talleres",
+      description: "Material didáctico usado en los talleres de Excel",
       icon: BookOpen,
       color: "text-primary",
       bgColor: "bg-primary/10",
       documents: [
-        { name: "Guía Básica de Excel", type: "PDF", size: "2.1 MB" },
-        { name: "Fórmulas y Funciones Esenciales", type: "PDF", size: "1.8 MB" },
-        { name: "Creación de Gráficos en Excel", type: "PDF", size: "2.5 MB" },
-        { name: "Tablas Dinámicas para Principiantes", type: "PDF", size: "3.2 MB" },
+        { 
+          name: "Guía Básica de Excel", 
+          type: "PDF", 
+          size: "514 KB", 
+          path: "/documents/guia-basica-excel.pdf" 
+        },
       ]
     },
     {
-      title: "Materiales Comunitarios",
-      description: "Recursos específicos para la comunidad pesquera",
+      title: "Archivos excel",
+      description: "Archivos excel terminados en cada taller",
       icon: Users,
       color: "text-secondary-vibrant",
       bgColor: "bg-secondary/20",
       documents: [
-        { name: "Registro de Capturas en Excel", type: "PDF", size: "1.4 MB" },
-        { name: "Control de Gastos Pesqueros", type: "PDF", size: "1.1 MB" },
-        { name: "Inventario de Equipos de Pesca", type: "PDF", size: "0.9 MB" },
-        { name: "Planilla de Ventas Diarias", type: "PDF", size: "1.2 MB" },
+        { 
+          name: "Taller 2", 
+          type: "Excel", 
+          size: "10 KB", 
+          path: "/documents/Taller2.xlsx" 
+        },
       ]
     }
   ];
@@ -73,7 +87,12 @@ const ResourcesSection = () => {
                               <p className="text-xs text-muted-foreground">{doc.type} • {doc.size}</p>
                             </div>
                           </div>
-                          <Button size="sm" variant="ghost" className="hover:bg-primary/10">
+                          <Button 
+                            size="sm" 
+                            variant="ghost" 
+                            className="hover:bg-primary/10"
+                            onClick={() => handleDownload(doc.name, doc.path)}
+                          >
                             <Download className="w-4 h-4" />
                           </Button>
                         </div>
