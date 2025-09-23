@@ -1,6 +1,6 @@
 import { ArrowDown, Leaf, Users, BookOpen } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import heroImage from "@/assets/hero-manglaralto.jpg";
+//import heroImage from "@/assets/hero-manglaralto.jpg";
 
 const HeroSection = () => {
   return (
@@ -8,7 +8,7 @@ const HeroSection = () => {
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img 
-          src={heroImage}
+          src="/images/fondo.jpg"
           alt="Costa de Manglaralto - Desarrollo sostenible marino-costero"
           className="w-full h-full object-cover"
         />

@@ -11,146 +11,34 @@ const GallerySection = () => {
   const galleryCollections = [
     {
       id: 1,
-      title: "Taller Básico de Excel",
+      title: "Taller 1: Introducción a Excel",
       date: "15 Marzo 2024",
-      participants: 25,
-      coverImage: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=400&h=300&fit=crop",
+      participants: 5,
+      coverImage: "/images/Carrusel1/1.jpeg",
       images: [
         {
-          src: "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=800&h=600&fit=crop",
-          alt: "Presentación inicial del taller de Excel"
+          src: "images/Carrusel1/1.jpeg",
+          alt: "Introducción al taller de Excel"
         },
         {
-          src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?w=800&h=600&fit=crop",
-          alt: "Participantes aprendiendo funciones básicas"
+          src: "images/Carrusel1/2.jpeg",
+          alt: ""
         },
         {
-          src: "https://images.unsplash.com/photo-1517180102446-f3ece451e9d8?w=800&h=600&fit=crop",
-          alt: "Práctica con hojas de cálculo"
+          src: "images/Carrusel1/3.jpeg",
+          alt: ""
         },
         {
-          src: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
-          alt: "Resolución de dudas individuales"
+          src: "images/Carrusel1/4.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Carrusel1/5.jpeg",
+          alt: ""
         }
       ]
     },
-    {
-      id: 2,
-      title: "Fórmulas y Funciones de Excel",
-      date: "20 Marzo 2024",
-      participants: 18,
-      coverImage: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=400&h=300&fit=crop",
-      images: [
-        {
-          src: "https://images.unsplash.com/photo-1581833971358-2c8b550f87b3?w=800&h=600&fit=crop",
-          alt: "Explicación de fórmulas avanzadas"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
-          alt: "Ejercicios prácticos con funciones"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-          alt: "Trabajo en equipo resolviendo casos"
-        }
-      ]
-    },
-    {
-      id: 3,
-      title: "Creación de Gráficos",
-      date: "28 Marzo 2024",
-      participants: 22,
-      coverImage: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
-      images: [
-        {
-          src: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=800&h=600&fit=crop",
-          alt: "Diseño de gráficos estadísticos"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=600&fit=crop",
-          alt: "Personalización de gráficos"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=800&h=600&fit=crop",
-          alt: "Presentación de resultados visuales"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1487058792275-0ad4aaf24ca7?w=800&h=600&fit=crop",
-          alt: "Análisis de datos con gráficos"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&h=600&fit=crop",
-          alt: "Trabajo colaborativo en gráficos"
-        }
-      ]
-    },
-    {
-      id: 4,
-      title: "Tablas Dinámicas en Excel",
-      date: "5 Abril 2024",
-      participants: 28,
-      coverImage: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=400&h=300&fit=crop",
-      images: [
-        {
-          src: "https://images.unsplash.com/photo-1583212292454-1fe6229603b7?w=800&h=600&fit=crop",
-          alt: "Introducción a tablas dinámicas"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1556761175-b413da4baf72?w=800&h=600&fit=crop",
-          alt: "Configuración de campos dinámicos"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=600&fit=crop",
-          alt: "Análisis de datos pesqueros"
-        }
-      ]
-    },
-    {
-      id: 5,
-      title: "Registro Digital de Capturas",
-      date: "12 Abril 2024",
-      participants: 30,
-      coverImage: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=400&h=300&fit=crop",
-      images: [
-        {
-          src: "https://images.unsplash.com/photo-1586348943529-beaae6c28db9?w=800&h=600&fit=crop",
-          alt: "Creación de plantillas de registro"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800&h=600&fit=crop",
-          alt: "Digitalización de datos de pesca"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&h=600&fit=crop",
-          alt: "Capacitación con pescadores locales"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=800&h=600&fit=crop",
-          alt: "Uso de tablets para registro"
-        }
-      ]
-    },
-    {
-      id: 6,
-      title: "Control de Gastos Pesqueros",
-      date: "18 Abril 2024",
-      participants: 24,
-      coverImage: "https://images.unsplash.com/photo-1570497492707-9f54797f24d3?w=400&h=300&fit=crop",
-      images: [
-        {
-          src: "https://images.unsplash.com/photo-1570497492707-9f54797f24d3?w=800&h=600&fit=crop",
-          alt: "Plantillas para control de gastos"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?w=800&h=600&fit=crop",
-          alt: "Análisis financiero de actividades"
-        },
-        {
-          src: "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=800&h=600&fit=crop",
-          alt: "Planificación económica comunitaria"
-        }
-      ]
-    },
+    
   ];
 
   const openGallery = (galleryIndex: number) => {
