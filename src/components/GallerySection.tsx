@@ -12,33 +12,61 @@ const GallerySection = () => {
     {
       id: 1,
       title: "Taller 1: Introducción a Excel",
-      date: "15 Marzo 2024",
+      date: "12 Septiembre 5",
       participants: 5,
-      coverImage: "/images/Carrusel1/1.jpeg",
+      coverImage: "/images/Taller1/1.jpeg",
       images: [
         {
-          src: "images/Carrusel1/1.jpeg",
+          src: "images/Taller1/1.jpeg",
           alt: "Introducción al taller de Excel"
         },
         {
-          src: "images/Carrusel1/2.jpeg",
+          src: "images/Taller1/2.jpeg",
           alt: ""
         },
         {
-          src: "images/Carrusel1/3.jpeg",
+          src: "images/Taller1/3.jpeg",
           alt: ""
         },
         {
-          src: "images/Carrusel1/4.jpeg",
+          src: "images/Taller1/4.jpeg",
           alt: ""
         },
         {
-          src: "images/Carrusel1/5.jpeg",
+          src: "images/Taller1/5.jpeg",
           alt: ""
         }
       ]
     },
-    
+    {
+      id: 2,
+      title: "Taller 2: Funciones Básicas de Excel",
+      date: "19 Septiembre 2025",
+      participants: 10,
+      coverImage: "/images/Taller2/1.jpeg",
+      images: [
+        {
+          src: "images/Taller2/1.jpeg",
+          alt: "Introducción al taller de Excel"
+        },
+        {
+          src: "images/Taller2/2.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Taller2/3.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Taller2/4.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Taller2/5.jpeg",
+          alt: ""
+        }
+      ]
+    }
   ];
 
   const openGallery = (galleryIndex: number) => {

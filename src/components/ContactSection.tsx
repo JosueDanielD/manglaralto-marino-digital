@@ -26,23 +26,16 @@ const ContactSection = () => {
 
   const teamMembers = [
     {
-      name: "Ing. María Salinas",
+      name: "Ing. Milena Riquero",
       role: "Coordinadora General del Proyecto",
-      email: "m.salinas@proyecto.ec",
-      specialization: "Capacitación en Herramientas Digitales"
     },
     {
-      name: "Lic. Carlos Mendoza",
+      name: "Ing. Sandra Coello",
       role: "Instructor Principal de Excel",
-      email: "c.mendoza@proyecto.ec",
-      specialization: "Microsoft Excel y Análisis de Datos"
+      //email: "c.mendoza@proyecto.ec",
+      //specialization: "Microsoft Excel y Análisis de Datos"
     },
-    {
-      name: "Lic. Ana Rodríguez",
-      role: "Facilitadora Comunitaria",
-      email: "a.rodriguez@proyecto.ec",
-      specialization: "Capacitación para Actividades Pesqueras"
-    }
+    
   ];
 
   return (
@@ -110,6 +103,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-semibold text-foreground">{member.name}</h4>
+                      {/*}
                       <p className="text-sm text-primary font-medium">{member.role}</p>
                       <p className="text-sm text-muted-foreground">{member.specialization}</p>
                       <a 
@@ -118,6 +112,7 @@ const ContactSection = () => {
                       >
                         {member.email}
                       </a>
+                      */}
                     </div>
                   </div>
                 ))}
