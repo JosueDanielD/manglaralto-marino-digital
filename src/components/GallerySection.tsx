@@ -66,6 +66,35 @@ const GallerySection = () => {
           alt: ""
         }
       ]
+    },
+    {
+      id: 3,
+      title: "Taller 3: Análisis de Datos con Excel",
+      date: "26 Septiembre 2025",
+      participants: 8,
+      coverImage: "/images/Taller3/1.jpeg",
+      images: [
+        {
+          src: "images/Taller3/1.jpeg",
+          alt: "Introducción al taller de Excel"
+        },
+        {
+          src: "images/Taller3/2.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Taller3/3.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Taller3/4.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/Taller3/5.jpeg",
+          alt: ""
+        }
+      ]
     }
   ];
 

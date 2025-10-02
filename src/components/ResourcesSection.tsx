@@ -27,6 +27,30 @@ const ResourcesSection = () => {
           size: "514 KB", 
           path: "/documents/guia-basica-excel.pdf" 
         },
+        {
+          name: 'Taller1_PracticaGuiada.pdf',
+          type: 'PDF',
+          size: '508 KB',
+          path: '/documents/Taller1_PracticaGuiada.pdf'
+        }, 
+        { 
+          name: 'Taller2_PracticaGuiada.pdf', 
+          type: 'PDF', 
+          size: '1.8 MB', 
+          path: '/documents/Taller2_PracticaGuiada.pdf'
+        },
+        { 
+          name: 'Taller3_PracticaGuiada.pdf', 
+          type: 'PDF', 
+          size: '634 KB',
+          path: '/documents/Taller3_PracticaGuiada.pdf'
+        },
+        { 
+          name: 'Taller4_PracticaGuiada.pdf', 
+          type: 'PDF', 
+          size: '5 KB',
+          path: '/documents/Taller4_PracticaGuiada.pdf'
+        },
       ]
     },
     {
@@ -37,11 +61,30 @@ const ResourcesSection = () => {
       bgColor: "bg-secondary/20",
       documents: [
         { 
+          name: "Taller 1", 
+          type: "Excel", 
+          size: "9 KB",
+          path: "/documents/Taller1.xlsx"
+        }, 
+        { 
           name: "Taller 2", 
           type: "Excel", 
           size: "10 KB", 
           path: "/documents/Taller2.xlsx" 
         },
+        { 
+          name: "Taller 3", 
+          type: "Excel", 
+          size: "21 KB",
+          path: "/documents/Taller3.xlsx"
+        },
+        
+        // { 
+        //   name: "Taller 4", 
+        //   type: "Excel", 
+        //   size: "16 KB",
+        //   path: "/documents/Taller4.xlsx"
+        // }
       ]
     }
   ];
@@ -54,7 +97,7 @@ const ResourcesSection = () => {
             Recursos y Documentos
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Accede a guías de Excel y materiales específicos para la comunidad pesquera de Manglaralto
+            Accede a guías de Excel y materiales específicos para la comunidad
           </p>
         </div>
 

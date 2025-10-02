@@ -57,7 +57,7 @@ const HeroSection = () => {
             <Button 
               variant="outline" 
               size="lg"
-              className="border-white text-white hover:bg-white hover:text-primary font-semibold px-8 py-3 shadow-wave hover-wave"
+              className="border-white text-black hover:bg-white hover:text-primary font-semibold px-8 py-3 shadow-wave hover-wave"
               onClick={() => document.getElementById('galeria')?.scrollIntoView({ behavior: 'smooth' })}
             >
               Ver Galería
