@@ -86,6 +86,27 @@ const ResourcesSection = () => {
         //   path: "/documents/Taller4.xlsx"
         // }
       ]
+    },
+    {
+      title: "Capacitacion ofimática: Word",
+      description: "Materiales de ofimática para la comunidad",
+      icon: Upload,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      documents: [
+        {
+          name: "Capacitacion ofimatica",
+          type: "PPTX",
+          size: "1.1 MB",
+          path: "/documents/Capacitacion_Ofimatica_Word01.pptx"
+        },
+        {
+          name: "Taller 01 - Ofimatica Word",
+          type: "Word",
+          size: "25 KB",
+          path: "/documents/Taller01 - Ofimatica Word.docx"
+        }
+      ]
     }
   ];
 
