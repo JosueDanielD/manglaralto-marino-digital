@@ -1,10 +1,10 @@
-import { ArrowDown, Leaf, Users, BookOpen } from "lucide-react";
+import { ArrowDown, Leaf, Users, BookOpen, FileText, Globe } from "lucide-react";
 import { Button } from "@/components/ui/button";
 //import heroImage from "@/assets/hero-manglaralto.jpg";
 
 const HeroSection = () => {
   return (
-    <section id="inicio" className="relative min-h-screen flex items-center">
+    <section id="inicio" className="relative min-h-screen flex items-center pt-20 md:pt-24 lg:pt-28">
       {/* Imagen de fondo */}
       <div className="absolute inset-0">
         <img 
@@ -28,7 +28,7 @@ const HeroSection = () => {
             Parroquia Manglaralto 2025
           </p>
           
-          <div className="grid md:grid-cols-3 gap-6 mb-10 max-w-3xl mx-auto">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-10 max-w-6xl mx-auto">
             <div className="flex flex-col items-center p-6 bg-white/20 rounded-lg backdrop-blur-sm hover-wave">
               <Users className="w-10 h-10 mb-3 text-secondary" />
               <h3 className="font-semibold text-lg mb-2">Comunidad</h3>
@@ -43,6 +43,20 @@ const HeroSection = () => {
               <BookOpen className="w-10 h-10 mb-3 text-secondary-vibrant" />
               <h3 className="font-semibold text-lg mb-2">Capacitación Excel</h3>
               <p className="text-sm text-white/90">Aprende Excel como herramienta de tu día a día</p>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-white/20 rounded-lg backdrop-blur-sm hover-wave">
+              <FileText className="w-10 h-10 mb-3 text-secondary" />
+              <h3 className="font-semibold text-lg mb-2">Capacitación Word</h3>
+              <p className="text-sm text-white/90">Aprende Word como herramienta de tu día a día</p>
+            </div>
+            <div className="flex flex-col items-center p-6 bg-white/20 rounded-lg backdrop-blur-sm hover-wave">
+              <Globe className="w-10 h-10 mb-3 text-secondary-vibrant" />
+              <h3 className="font-semibold text-lg mb-2">
+                Capacitación Aprendiendo a Navegar en Internet
+              </h3>
+              <p className="text-sm text-white/90">
+                Aprende a navegar en el internet de forma segura
+              </p>
             </div>
           </div>
 

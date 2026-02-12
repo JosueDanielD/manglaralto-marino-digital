@@ -1,11 +1,20 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Camera, X, ChevronLeft, ChevronRight, Calendar, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import {
+  Carousel,
+  CarouselApi,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 
 const GallerySection = () => {
   const [selectedGallery, setSelectedGallery] = useState<number | null>(null);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [carouselApi, setCarouselApi] = useState<CarouselApi | null>(null);
 
   // Cada evento tiene múltiples fotos
   const galleryCollections = [
@@ -95,6 +104,131 @@ const GallerySection = () => {
           alt: ""
         }
       ]
+    },
+    {
+      id: 4,
+      title: "Taller 1: Introducción a Word",
+      date: "21 Noviembre 2025",
+      participants: 8,
+      coverImage: "/images/CapacitacionWord01/FotoGrupal_2.jpg",
+      images: [
+        {
+          src: "images/CapacitacionWord01/FotoGrupal_2.jpg",
+          alt: "Taller 1: Introducción a Word"
+        },
+        {
+          src: "images/CapacitacionWord01/1769005659317.jpg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord01/1769005659416.jpg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord01/1769005659886.jpg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord01/1769005659957.jpg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord01/1769005660057.jpg",
+          alt: ""
+        }
+      ]
+    },
+    {
+      id: 5,
+      title: "Taller 2: Microsoft Word Basico - Intermedio",
+      date: "21 Enero 2026",
+      participants: 3,
+      coverImage: "/images/CapacitacionWord02/1769005658381.jpg",
+      images: [
+        {
+          src: "images/CapacitacionWord02/1769005658381.jpg",
+          alt: "Taller 2: Microsoft Word Basico - Intermedio"
+        },
+        {
+          src: "images/CapacitacionWord02/1769005658518.jpg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord02/1769005658548.jpg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord02/1769005658633.jpg",
+          alt: ""
+        }
+      ]
+    },
+    {
+      id: 6,
+      title: "Taller 3: Microsoft Word Intermedio - Avanzado",
+      date: "5 Diciembre 2025",
+      participants: 7,
+      coverImage:
+        "/images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.34%20PM.jpeg",
+      images: [
+        {
+          src: "images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.34%20PM.jpeg",
+          alt: "Taller 3: Microsoft Word Intermedio - Avanzado"
+        },
+        {
+          src: "images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.36%20PM.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.37%20PM%20(2).jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.39%20PM.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.43%20PM%20(1).jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionWord03/WhatsApp%20Image%202026-01-29%20at%2010.25.43%20PM%20(2).jpeg",
+          alt: ""
+        }
+      ]
+    },
+    {
+      id: 7,
+      title: "Taller 4: Aprendiendo a Navegar en Internet",
+      date: "Fecha por confirmar",
+      participants: 7,
+      coverImage: "/images/CapacitacionUsoInternet/Taller.jpeg",
+      images: [
+        {
+          src: "images/CapacitacionUsoInternet/Taller.jpeg",
+          alt: "Taller 4: Aprendiendo a Navegar en Internet"
+        },
+        {
+          src: "images/CapacitacionUsoInternet/Explicacion%20Taller.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionUsoInternet/Explicacion%20Taller%202.jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionUsoInternet/WhatsApp%20Image%202026-02-09%20at%204.08.05%20PM%20(1).jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionUsoInternet/WhatsApp%20Image%202026-02-09%20at%204.08.06%20PM%20(3).jpeg",
+          alt: ""
+        },
+        {
+          src: "images/CapacitacionUsoInternet/WhatsApp%20Image%202026-02-09%20at%204.08.06%20PM%204.jpeg",
+          alt: ""
+        }
+      ]
     }
   ];
 
@@ -126,6 +260,21 @@ const GallerySection = () => {
 
   const currentCollection = selectedGallery !== null ? galleryCollections[selectedGallery] : null;
   const currentImage = currentCollection ? currentCollection.images[currentImageIndex] : null;
+  const autoPlayDelayMs = 4000;
+
+  useEffect(() => {
+    if (!carouselApi) {
+      return;
+    }
+
+    const intervalId = window.setInterval(() => {
+      carouselApi.scrollNext();
+    }, autoPlayDelayMs);
+
+    return () => {
+      window.clearInterval(intervalId);
+    };
+  }, [carouselApi]);
 
   return (
     <section id="galeria" className="py-20 bg-secondary/20">
@@ -140,44 +289,51 @@ const GallerySection = () => {
           </p>
         </div>
 
-        {/* Cuadrícula de colecciones de imágenes */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {galleryCollections.map((collection, index) => (
-            <Card 
-              key={collection.id} 
-              className="group overflow-hidden shadow-coastal hover-wave cursor-pointer animate-fade-in-up"
-              style={{ animationDelay: `${index * 0.1}s` }}
-              onClick={() => openGallery(index)}
-            >
-              <div className="relative overflow-hidden">
-                <img
-                  src={collection.coverImage}
-                  alt={`Portada de ${collection.title}`}
-                  className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                  <div className="text-center text-white">
-                    <Camera className="w-8 h-8 mx-auto mb-2" />
-                    <span className="text-sm font-medium">{collection.images.length} fotos</span>
+        {/* Carrusel de colecciones de imágenes */}
+        <Carousel setApi={setCarouselApi} opts={{ align: "start", loop: true }} className="w-full">
+          <CarouselContent>
+            {galleryCollections.map((collection, index) => (
+              <CarouselItem key={collection.id} className="md:basis-1/2 lg:basis-1/3">
+                <Card 
+                  className="group overflow-hidden shadow-coastal hover-wave cursor-pointer animate-fade-in-up"
+                  style={{ animationDelay: `${index * 0.1}s` }}
+                  onClick={() => openGallery(index)}
+                >
+                  <div className="relative overflow-hidden">
+                    <img
+                      src={collection.coverImage}
+                      alt={`Portada de ${collection.title}`}
+                      className="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-primary/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                      <div className="text-center text-white">
+                        <Camera className="w-8 h-8 mx-auto mb-2" />
+                        <span className="text-sm font-medium">{collection.images.length} fotos</span>
+                      </div>
+                    </div>
                   </div>
-                </div>
-              </div>
-              <CardContent className="p-4">
-                <h3 className="font-semibold text-primary mb-2">{collection.title}</h3>
-                <div className="flex items-center justify-between text-sm text-muted-foreground">
-                  <div className="flex items-center space-x-1">
-                    <Calendar className="w-4 h-4" />
-                    <span>{collection.date}</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="w-4 h-4" />
-                    <span>{collection.participants}</span>
-                  </div>
-                </div>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  <CardContent className="p-4">
+                    <h3 className="font-semibold text-primary mb-2">{collection.title}</h3>
+                    <div className="flex items-center justify-between text-sm text-muted-foreground">
+                      <div className="flex items-center space-x-1">
+                        <Calendar className="w-4 h-4" />
+                        <span>{collection.date}</span>
+                      </div>
+                      <div className="flex items-center space-x-1">
+                        <Users className="w-4 h-4" />
+                        <span>{collection.participants}</span>
+                      </div>
+                    </div>
+                  </CardContent>
+                </Card>
+              </CarouselItem>
+            ))}
+          </CarouselContent>
+          <div className="mt-6 flex items-center justify-center gap-4">
+            <CarouselPrevious className="static h-10 w-10 rounded-full bg-white/90 text-primary shadow-lg ring-1 ring-primary/20 hover:bg-white hover:text-primary" />
+            <CarouselNext className="static h-10 w-10 rounded-full bg-white/90 text-primary shadow-lg ring-1 ring-primary/20 hover:bg-white hover:text-primary" />
+          </div>
+        </Carousel>
 
         {/* Modal de galería con navegación */}
         {currentCollection && currentImage && (

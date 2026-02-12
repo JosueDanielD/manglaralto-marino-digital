@@ -1,0 +1,246 @@
+import { Download, FileText, BookOpen, Users, Leaf, Upload } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+
+const ResourcesSection = () => {
+  // Funcion para manejar la descarga de archivos
+  const handleDownload = (fileName: string, filePath: string) => {
+    const link = document.createElement("a");
+    link.href = filePath;
+    link.download = fileName;
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
+
+  const resourceCategories = [
+    {
+      title: "Capacitacion Excel",
+      description: "Guias, practicas y archivos de los talleres de Excel",
+      icon: BookOpen,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      documents: [
+        {
+          name: "Guia basica de Excel",
+          type: "PDF",
+          size: "502 KB",
+          path: "/documents/Excel/guia-basica-excel.pdf",
+        },
+        {
+          name: "Taller1_PracticaGuiada.pdf",
+          type: "PDF",
+          size: "496 KB",
+          path: "/documents/Excel/Taller1_PracticaGuiada.pdf",
+        },
+        {
+          name: "Taller2_PracticaGuiada.pdf",
+          type: "PDF",
+          size: "1.7 MB",
+          path: "/documents/Excel/Taller2_PracticaGuiada.pdf",
+        },
+        {
+          name: "Taller3_PracticaGuiada.pdf",
+          type: "PDF",
+          size: "619 KB",
+          path: "/documents/Excel/Taller3_PracticaGuiada.pdf",
+        },
+        {
+          name: "Taller4_PracticaGuiada.pdf",
+          type: "PDF",
+          size: "5 KB",
+          path: "/documents/Excel/Taller4_PracticaGuiada.pdf",
+        },
+        {
+          name: "Taller 1",
+          type: "Excel",
+          size: "9 KB",
+          path: "/documents/Excel/Taller1.xlsx",
+        },
+        {
+          name: "Taller 2",
+          type: "Excel",
+          size: "10 KB",
+          path: "/documents/Excel/Taller2.xlsx",
+        },
+        {
+          name: "Taller 3",
+          type: "Excel",
+          size: "21 KB",
+          path: "/documents/Excel/Taller3.xlsx",
+        },
+        {
+          name: "Taller 4",
+          type: "Excel",
+          size: "6 KB",
+          path: "/documents/Excel/Taller4.xlsx",
+        },
+        {
+          name: "Taller 2 Presentacion",
+          type: "PPTX",
+          size: "1.9 MB",
+          path: "/documents/Excel/Taller2Presentacion.pptx",
+        },
+        {
+          name: "Taller 3 Presentacion",
+          type: "PPTX",
+          size: "1.4 MB",
+          path: "/documents/Excel/Taller3Presentacion.pptx",
+        },
+      ],
+    },
+    {
+      title: "Capacitacion Word",
+      description: "Presentaciones, talleres y guias de ofimatica en Word",
+      icon: Upload,
+      color: "text-secondary-vibrant",
+      bgColor: "bg-secondary/20",
+      documents: [
+        {
+          name: "Capacitacion ofimatica",
+          type: "PPTX",
+          size: "1.1 MB",
+          path: "/documents/Word/Capacitacion_Ofimatica_Word01.pptx",
+        },
+        {
+          name: "Capacitacion 2 - Microsoft Word Basico Intermedio",
+          type: "PPTX",
+          size: "16.8 MB",
+          path: "/documents/Word/Capacitación 2 – Microsoft Word Básico Intermedio.pptx",
+        },
+        {
+          name: "Taller 01 - Ofimatica Word",
+          type: "Word",
+          size: "25 KB",
+          path: "/documents/Word/Taller01 - Ofimatica Word.docx",
+        },
+        {
+          name: "Taller Integrador - Capacitacion 2",
+          type: "PDF",
+          size: "141 KB",
+          path: "/documents/Word/Taller Integrador - Capacitación 2.pdf",
+        },
+      ],
+    },
+    {
+      title: "Uso del Internet",
+      description: "Materiales y guias sobre navegacion y herramientas en linea",
+      icon: Users,
+      color: "text-primary",
+      bgColor: "bg-primary/10",
+      documents: [],
+    },
+  ];
+  const featuredKit = {
+    name: "Kit de Materiales",
+    description: "Incluye material de todos los talleres presentados.",
+    type: "PDF",
+    size: "492 KB",
+    path: "/documents/Kit de Materiales de Taller.pdf",
+  };
+
+  return (
+    <section id="recursos" className="py-20 gradient-horizon">
+      <div className="container mx-auto px-4">
+        <div className="text-center mb-16 animate-fade-in-up">
+          <h2 className="text-4xl md:text-5xl font-bold text-primary mb-4">
+            Recursos y Documentos
+          </h2>
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            Accede a guias y materiales de Excel, Word y uso de Internet.
+          </p>
+        </div>
+
+        <div className="max-w-4xl mx-auto mb-10 animate-fade-in-up">
+          <Card className="shadow-deep hover-wave bg-primary/5 border border-primary/30 ring-1 ring-primary/20">
+            <CardHeader className="text-center">
+              <div className="flex items-center justify-center gap-3 mb-3">
+                <div className="inline-flex p-3 rounded-full bg-primary/10">
+                  <Leaf className="w-7 h-7 text-primary" />
+                </div>
+                <Badge className="uppercase tracking-wide">Esencial</Badge>
+              </div>
+              <CardTitle className="text-2xl text-primary">{featuredKit.name}</CardTitle>
+              <CardDescription className="text-muted-foreground">
+                {featuredKit.description}
+              </CardDescription>
+            </CardHeader>
+            <CardContent className="flex flex-col items-center gap-4">
+              <div className="flex items-center gap-3 rounded-lg bg-white/70 px-4 py-3 text-sm text-muted-foreground">
+                <FileText className="w-4 h-4" />
+                <span>
+                  {featuredKit.type} • {featuredKit.size}
+                </span>
+              </div>
+              <Button
+                className="bg-primary text-primary-foreground hover:bg-primary/90"
+                onClick={() => handleDownload(featuredKit.name, featuredKit.path)}
+              >
+                <Download className="w-4 h-4 mr-2" />
+                Descargar kit
+              </Button>
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+          {resourceCategories.map((category, index) => {
+            const IconComponent = category.icon;
+            return (
+              <div key={index} className="animate-fade-in-up" style={{ animationDelay: `${index * 0.2}s` }}>
+                <Card className="h-full shadow-wave hover-wave bg-card/80 backdrop-blur-sm">
+                  <CardHeader className="text-center">
+                    <div className={`inline-flex p-3 rounded-full ${category.bgColor} mb-4`}>
+                      <IconComponent className={`w-8 h-8 ${category.color}`} />
+                    </div>
+                    <CardTitle className="text-xl text-primary">{category.title}</CardTitle>
+                    <CardDescription className="text-muted-foreground">
+                      {category.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent>
+                    {category.documents.length > 0 ? (
+                      <div className="space-y-3">
+                        {category.documents.map((doc, docIndex) => (
+                          <div
+                            key={docIndex}
+                            className="flex items-center justify-between p-3 rounded-lg bg-secondary/10 hover:bg-secondary/20 transition-smooth"
+                          >
+                            <div className="flex items-center space-x-3">
+                              <FileText className="w-4 h-4 text-muted-foreground" />
+                              <div>
+                                <p className="font-medium text-sm">{doc.name}</p>
+                                <p className="text-xs text-muted-foreground">
+                                  {doc.type} • {doc.size}
+                                </p>
+                              </div>
+                            </div>
+                            <Button
+                              size="sm"
+                              variant="ghost"
+                              className="hover:bg-primary/10"
+                              onClick={() => handleDownload(doc.name, doc.path)}
+                            >
+                              <Download className="w-4 h-4" />
+                            </Button>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div className="rounded-lg bg-secondary/10 p-4 text-center text-sm text-muted-foreground">
+                        Proximamente.
+                      </div>
+                    )}
+                  </CardContent>
+                </Card>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+};
+
+export default ResourcesSection;
